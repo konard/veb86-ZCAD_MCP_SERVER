@@ -20,7 +20,7 @@ Objective: fully implement and verify issue #3 in PR #4. Fix the Windows
 - [x] Explain the root cause and Windows graceful-stop option in README.
 - [x] Run focused checks and `npm run verify` with logs saved to files. Record
   platform/version limits honestly; do not claim a native Windows run on Linux.
-- [ ] Review the full PR diff and refresh all feedback; commit atomic changes,
+- [x] Review the full PR diff and refresh all feedback; commit atomic changes,
   push only issue-3-e7c41f4fd3bf, update PR #4 with reproduction and test evidence,
   retain `Fixes #3`, confirm clean status and upstream main ancestry, mark ready.
 
@@ -31,7 +31,7 @@ Issue reports Windows 10 / Node.js 24.13.1; only lifecycle assertion fails:
 Node's official child-process/process documentation specifies that Windows
 `child.kill('SIGTERM')` terminates unconditionally, yielding a null exit code
 and SIGTERM signal. It does not invoke the application's JavaScript handler.
-The test currently asserts zero for both EOF and SIGTERM, ignoring the signal.
+The original test asserted zero for both EOF and SIGTERM, ignoring the signal.
 
 No release workflows, other Actions workflows or PR checks exist in either
 upstream or fork. No package release trigger/version change is necessary.
@@ -49,3 +49,9 @@ or failures (~6 seconds). No native Windows execution is claimed.
 Logs: /tmp/issue-3-{npm-ci,baseline-build,baseline-lifecycle,windows-before,
 windows-after,verify}.log. See docs/verification.md for permanent evidence,
 expected exit tuples and repeatable automated verification commands.
+
+Final review: all issue/PR feedback and sub-issues remain empty. The complete
+PR diff was reviewed; application behavior and existing features are preserved.
+Upstream main is an ancestor of this branch. PR #4 has its final title, cause,
+reproduction, automated-check commands, evidence and positive `Fixes #3`
+reference. It is ready for review and remains unmerged. No CI runs/checks exist.
