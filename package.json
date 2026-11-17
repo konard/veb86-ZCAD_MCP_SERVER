@@ -1,0 +1,27 @@
+{
+  "name": "zcad-mcp-server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Independent MCP bridge to the existing ZCAD HTTPServer",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "bin": { "zcad-mcp-server": "dist/cli.js" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "start": "node dist/cli.js",
+    "test": "node --test --test-concurrency=1 --test-timeout=15000 tests/*.test.mjs",
+    "verify": "npm run build && npm test",
+    "smoke": "node examples/smoke.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/node": "^2.1.2",
+    "@modelcontextprotocol/server": "^2.4.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "^2.4.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^7.0.2"
+  }
+}
