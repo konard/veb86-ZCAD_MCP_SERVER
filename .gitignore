@@ -1,0 +1,6 @@
+node_modules/
+dist/
+*.log
+ci-logs/
+config.local.json
+.env

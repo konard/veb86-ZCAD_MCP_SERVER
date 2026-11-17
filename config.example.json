@@ -1,0 +1,17 @@
+{
+  "zcad": {
+    "baseUrl": "http://127.0.0.1:5000",
+    "timeoutMs": 35000,
+    "maxResponseBytes": 8388608,
+    "maxRequestBytes": 1048576,
+    "headers": {}
+  },
+  "mcp": {
+    "transport": "stdio",
+    "host": "127.0.0.1",
+    "port": 3000,
+    "maxRequestBytes": 1048576,
+    "shutdownTimeoutMs": 5000
+  },
+  "debug": false
+}
