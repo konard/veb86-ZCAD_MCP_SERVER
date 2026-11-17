@@ -23,12 +23,14 @@ changing ZCAD or its SDK. Keep genuinely blocked acceptance criteria unfinished.
   deadlines, errors, affected modules and acceptance (§4). Make no upstream edits.
 - [x] Add focused automated SDK-client → MCP → adapter → HTTP fixture tests,
   including connection, timeout, malformed-response and lifecycle failures (§7).
-- [ ] Provide a live-ZCAD smoke scenario; execute when an existing ZCAD endpoint
-  is available. A fixture alone does not verify the real ZCAD criterion (§7.5).
+- [x] Provide and attempt the live-ZCAD smoke scenario; preserve failure evidence.
+- [ ] Verify a successful round trip against real ZCAD (§7.5). No runtime or
+  endpoint is available; the attempt returned CONNECTION_ERROR. A fixture alone
+  does not verify this criterion.
 - [x] Write installation, configuration, startup, client and extension docs (§8).
-- [ ] Run focused checks, review the entire PR diff, commit atomic steps, push
+- [x] Run focused checks, review the entire PR diff, commit atomic steps, push
   only the prepared branch, synchronize upstream main and update PR #2.
-- [ ] Check current-head CI (preserve and inspect failure logs if any), refresh
+- [x] Check current-head CI (preserve and inspect failure logs if any), refresh
   feedback, mark PR ready when implementation is finished, keep it unmerged.
 
 ## Verification strategy
@@ -47,3 +49,10 @@ with CONNECTION_ERROR. No ZCAD runtime/endpoint is available. Live criterion
 
 Upstream spec is submitted for approval as part of PR #2; implementing that
 separate work is explicitly not authorized by issue #1 before approval.
+
+Final review: all issue comments, sub-issues, PR conversation/inline comments
+and reviews are empty. The PR diff preserves the original repository's scope;
+there were no existing application features. Upstream main is an ancestor of
+this branch. No Actions runs or PR checks exist, so no CI pass is claimed.
+PR #2 now has its final title, implementation/test/blocked-criterion description,
+and positive `Closes #1` reference; it is ready for review and remains unmerged.

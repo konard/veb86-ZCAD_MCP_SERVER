@@ -44,13 +44,16 @@ MCP connection and tool discovery completed, but `zcad_health` returned:
 ```
 
 The scenario exited 1, as required on failure. No running ZCAD endpoint or
-installed GUI build is available in this environment. Source inspection also
+installed GUI build is available in this environment, and the upstream ZCAD
+repository publishes no GitHub releases to download. Source inspection also
 shows PING absent from the inspected build's module list and inconsistent
 registration names in the standalone system module (see analysis).
 
 Unfinished criterion: issue §7 step 5 and a successful full live round trip.
-Resolving it requires an existing running ZCAD build exposing the inspected
-API and PING, or separately approved upstream stage A followed by a live run.
+Resolving it requires a running ZCAD build exposing the inspected API. The
+health-only scenario exercises the complete MCP → real HTTPServer round trip;
+the additional command-execution scenario requires registered PING, or
+separately approved upstream stage A followed by a live run.
 No HTTPServer changes, command emulation or TCP/GUI fallback were introduced.
 
 Live reproduction: start ZCAD, run `HTTPStart 127.0.0.1 5000`, then run
